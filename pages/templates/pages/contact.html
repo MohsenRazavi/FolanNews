@@ -1,0 +1,57 @@
+{% extends '_base.html' %}
+
+{% block title %}
+
+  Contact Folan
+
+{% endblock title %}
+
+{% block navbar_links %}
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+
+    </ul>
+
+{% endblock navbar_links %}
+
+{% block content %}
+<div class="card text-center">
+  <h3 class="card-header">
+    Contact Us
+  </h3>
+  <div class="card-body">
+    <h5 class="card-title">Contact us via ... </h5>
+    <p class="card-text">As we are very good we share our social medias thus please message us</p>
+    <div class="card">
+  <div class="card-header">
+    Social Media
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><button type="button" class="btn btn-success btn-sm">Instagram</button></li>
+    <li class="list-group-item"><button type="button" class="btn btn-primary btn-sm">FaceBook</button></li>
+    <li class="list-group-item"><button type="button" class="btn btn-danger btn-sm">Twitter</button></li>
+  </ul>
+          <div class="card-header">
+    Other Ways
+  </div>
+          <ul class="list-group list-group-flush">
+    <li class="list-group-item">Email : Folan@Bahman.com</li>
+    <li class="list-group-item">Phone : 0101010101010101</li>
+    <li class="list-group-item">Address : folanja</li>
+  </ul>
+</div>
+  </div>
+  <div class="card-footer text-muted">
+    folannews.com
+  </div>
+</div>
+{% endblock content %}

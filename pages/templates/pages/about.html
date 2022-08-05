@@ -1,0 +1,50 @@
+{% extends '_base.html' %}
+
+{% block title %}
+
+    About Folan
+
+{% endblock title %}
+
+{% block navbar_links %}
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+
+    </ul>
+
+{% endblock navbar_links %}
+
+{% block content %}
+    <div class="card text-center mt-4">
+        <div class="card-header">
+            About Folan News
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">We are the best</h5>
+            <p class="card-text">
+            <p>Lorem ipsum dolor sit amet. Non quia harum ut explicabo repudiandae eum dolorem unde id quod officiis.
+                Quo quidem quaerat hic accusantium dolor ut iusto laudantium sed repellat cumque qui molestiae eligendi
+                ut exercitationem maiores! </p>
+            <p>Sit quas doloremque tenetur possimus non beatae omnis est modi provident? A fugiat voluptate At modi iure
+                aut velit libero qui delectus doloremque id voluptatem labore! </p>
+            <p>Et nihil possimus cum mollitia magni qui dolorem placeat est dolore veritatis qui quis illo et porro
+                consequatur! A adipisci consequatur in quas quod sed provident ipsam et veniam veniam sit aliquid
+                temporibus sed quam accusamus ea autem nihil. Sit magni necessitatibus est aspernatur debitis ut
+                molestiae voluptatem. </p>
+            </p>
+            <a href="{% url 'signup' %}" class="btn btn-primary">Join Us</a>
+        </div>
+        <div class="card-footer text-muted">
+            folannews.com
+        </div>
+    </div>
+{% endblock content %}

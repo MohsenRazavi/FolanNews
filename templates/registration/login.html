@@ -1,0 +1,48 @@
+{% extends '_base.html' %}
+
+{% block title %}
+
+    Login
+
+{% endblock title %}
+
+{% block navbar_links %}
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+
+    </ul>
+
+{% endblock navbar_links %}
+
+
+{% block content %}
+
+     <div class="card text-center mt-4">
+        <div class="card-header">
+            Login
+        </div>
+        <div class="card-body">
+
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-success">Login</button>
+
+                <p class="card-text mt-3">Don't have account ? <a href="{% url 'signup' %}" type="submit" class="btn btn-secondary btn-sm">Signup</a></p>
+            </form>
+        </div>
+        <div class="card-footer text-muted">
+            folannews.com
+        </div>
+    </div>
+
+{% endblock content %}

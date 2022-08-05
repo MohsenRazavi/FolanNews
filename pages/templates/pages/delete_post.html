@@ -1,0 +1,47 @@
+{% extends '_base.html' %}
+
+{% block title %}
+
+    Delete {{ post.title }}
+
+{% endblock title %}
+
+{% block navbar_links %}
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+
+    </ul>
+
+{% endblock navbar_links %}
+
+
+{% block content %}
+
+     <div class="card text-center mt-4">
+        <div class="card-header">
+            Delete Post
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Are you sure you want to delete {{ post.title }} ? </h5>
+            <h6 class="card-title">{{ post.author_message }}</h6>
+            <form method="POST">
+                {% csrf_token %}
+            <a href="{% url 'home' %}" type="submit" class="btn btn-outline-primary">Go back</a>
+            <input  type="submit" class="btn btn-outline-danger" value="I'm Sure To Delete">
+            </form>
+        </div>
+        <div class="card-footer text-muted">
+            folannews.com
+        </div>
+    </div>
+
+{% endblock content %}

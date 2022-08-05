@@ -1,0 +1,68 @@
+{% extends '_base2.html' %}
+
+{% block title %}
+
+    {{ post.name }}
+
+{% endblock title %}
+
+{% block navbar_links %}
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+
+    </ul>
+
+{% endblock navbar_links %}
+
+{% block content %}
+
+    <div class="card my-4">
+
+        <div class="card-body">
+            <h1 class="card-title">{{ post.title }}</h1>
+
+
+            <p class="card-text">{{ post.text }}</p>
+
+            <blockquote class="blockquote mb-0">
+                <footer class="blockquote-footer">{{ post.author_message }}</footer>
+            </blockquote>
+        </div>
+
+
+    </div>
+
+{% endblock content %}
+
+{% block about_post %}
+    <div class="card">
+        <h5 class="card-header">
+            About
+        </h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Author : {{ post.author }} </li>
+            <li class="list-group-item">Build Time : {{ post.datetime_created }}</li>
+            <li class="list-group-item">Last Edit : {{ post.datetime_lastedit }}</li>
+
+             <li class="btn btn-primary ">
+                Share
+            </li>
+            {% if user.is_authenticated %}
+            <li class="list-group-item">
+                <a href="{% url 'edit_post' post.id %}" type="button" class="btn btn-warning mx-auto">Edit Post</a>
+                <a href="{% url 'delete_post' post.id %}" type="button" class="btn btn-danger mx-auto">Delete Post</a>
+            </li>
+            {% endif %}
+
+        </ul>
+    </div>
+{% endblock about_post %}

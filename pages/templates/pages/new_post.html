@@ -1,0 +1,47 @@
+{% extends '_base.html' %}
+
+{% block title %}
+
+    Add New Post
+
+{% endblock title %}
+
+{% block navbar_links %}
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+
+    </ul>
+
+{% endblock navbar_links %}
+
+
+{% block content %}
+
+     <div class="card text-center mt-4">
+        <div class="card-header">
+            Adding New Post
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Enter the following items : </h5>
+            </br>
+            <form method="POST">
+                {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-outline-primary">Save</button>
+            </form>
+        </div>
+        <div class="card-footer text-muted">
+            folannews.com
+        </div>
+    </div>
+
+{% endblock content %}
